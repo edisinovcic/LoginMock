@@ -1,0 +1,3 @@
+CREATE DATABASE mockapp;
+CREATE USER mockapp WITH PASSWORD 'hajduk1950';
+GRANT ALL PRIVILEGES ON DATABASE mockapp to mockapp;
