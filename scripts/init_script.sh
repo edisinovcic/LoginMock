@@ -1,4 +1,4 @@
 #!/bin/bash
 bundle install
-rails db:setup db:migrate
+bundle exec rake db:create db:migrate
 rails server
