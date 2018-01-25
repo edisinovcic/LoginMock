@@ -1,4 +1,4 @@
-class ParkingLocationController < ApplicationController
+class ParkingLocationsController < ApplicationController
 
   def index
     render json: ParkingLocation.all, status: :ok
