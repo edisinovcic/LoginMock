@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    render json: User.all
+    render json: User.all, status: :ok
   end
 
   def create
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.id = params[:id]
     if user.save
-      render json: user
+      render json: user, status: 202
     else
       render json: {message: 'User creation failed'}, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     if user.delete
       render json: user, status: :ok
     else
-      render json: user.error, status: :unprocessable_entity
+      render json: {message: 'User destroy failed'}, status: :unprocessable_entity
     end
   rescue
     render json: {message: 'User destroy failed'}, status: :unprocessable_entity
