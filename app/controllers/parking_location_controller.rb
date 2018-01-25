@@ -23,7 +23,7 @@ class ParkingLocationController < ApplicationController
   private
 
   def parking_location_params
-    params.require(:parking_location).permit(:name, :description, :latitude, :longitude)
+    params.require(:parking_location).permit(:name, :description, :address, :latitude, :longitude)
   end
 
 end
