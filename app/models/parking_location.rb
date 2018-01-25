@@ -1,2 +1,3 @@
 class ParkingLocation < ApplicationRecord
+
 end
