@@ -6,22 +6,25 @@ class AuthenticationsController < ApplicationController
     render json: Authentication.all, status: :ok
   end
 
-  # GET /authentications/1
-  # GET /authentications/1.json
-  def show
-    authentication = Authentication.find(params[:username])
+
+  def show_by_username_and_password
+    username = params[:username]
+    password = params[:password]
+    authentication = Authentication.find_by_username!(username)
     if authentication.nil?
-      render json: "User doesn't exist"
+      render json: {message: "User doesn't exist"}
+      raise ActiveRecord::RecordNotFound
     end
     if authentication.password == password
-      render json: "Username and password are correct"
+      render json: {message: "Username and password are correct"}
     else
-      render json: "Password is incorect"
+      render json: {message: "Password is incorect"}
     end
+  rescue ActiveRecord::RecordNotFound => e
+    render json: {message: "User doesn't exist"}, status: 404
   end
 
-  # POST /authentications
-  # POST /authentications.json
+
   def create
     @authentication = Authentication.new(authentication_params)
     if @authentication.save
