@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :parking_histories
   resources :authentications, path: '/auth', param: :username, except: :show
   resources :users
   resources :parking_locations

@@ -18,8 +18,6 @@ class UsersController < ApplicationController
     render json: user, status: :ok
   rescue ActiveRecord::RecordNotFound
     render json: {message: "User doesn't exists"}, status: 404
-
-
   end
 
   def update
@@ -48,7 +46,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :username)
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
 
 end
