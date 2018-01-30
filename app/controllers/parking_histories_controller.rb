@@ -1,5 +1,4 @@
 class ParkingHistoriesController < ApplicationController
-  before_action :set_parking_history, only: [:show, :update, :destroy]
 
   # GET /parking_histories
   # GET /parking_histories.json
@@ -12,7 +11,7 @@ class ParkingHistoriesController < ApplicationController
   def show
     parking_history = ParkingHistory.find(params[:id])
     render json: parking_history, status: :ok
-  rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound => e
     render json: {message: "User doesn't exists"}, status: 404
   end
 
