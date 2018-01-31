@@ -5,8 +5,8 @@ parkingHistories = ParkingHistory.create!([
                                           ])
 
 users = User.create!([
-                         {first_name: 'Test', last_name: 'User', email: 'email@email.com', password: 'password'},
-                         {first_name: 'Test2', last_name: 'User2', email: 'email2@email.com', password: 'password2'},
+                         {first_name: 'Test', last_name: 'User', email: 'email@email.com', password: 'password', username: 'username1'},
+                         {first_name: 'Test2', last_name: 'User2', email: 'email2@email.com', password: 'password2', username: 'username2'},
                      ])
 
 parkingLocations = ParkingLocation.create!([
@@ -14,8 +14,3 @@ parkingLocations = ParkingLocation.create!([
                                                {name: 'Darko\'s crib', description: 'Loren ipsum2', address: 'Savska 33, Zagreb, Croatia', latitude: '42.378353', longitude: '14.538341'},
                                                {name: 'Domagoj\'s crib', description: 'Loren ipsum3', address: 'Savska 32, Zagreb, Croatia', latitude: '41.378353', longitude: '13.538341'}
                                            ])
-
-authentications = Authentication.create!([
-                                             {username: 'username1', password: 'password123'},
-                                             {username: 'username2', password: 'password1234'}
-                                         ])

@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :parking_histories
-  resources :authentications, path: '/auth', param: :username, except: :show
-  resources :users
-  resources :parking_locations
+  resources :parking_histories, only: [:index, :create, :show, :destroy]
+  resources :users, only: [:index, :create, :show, :destroy]
+  resources :parking_locations, only: [:index, :create, :show, :destroy]
   root 'rails/info#routes'
 
-  post '/auth/:username', to: 'authentications#show_by_username_and_password'
+  post '/auth/', to: 'authentications#show'
   #match '/auth/:username', to: 'show_by_username_and_password', controller: 'authentications', method: post
 end
