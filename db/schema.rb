@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20180130102954) do
     t.string "address", default: "", null: false
     t.string "date", default: "", null: false
     t.decimal "duration", default: "0.0", null: false
-    t.decimal "paid_price", default: "0.0", null: false
+    t.decimal "paidPrice", default: "0.0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20180130102954) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name", default: "", null: false
-    t.string "last_name", default: "", null: false
+    t.string "firstName", default: "", null: false
+    t.string "lastName", default: "", null: false
     t.string "email", default: "", null: false
     t.string "password", default: "", null: false
     t.datetime "created_at", null: false

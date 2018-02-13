@@ -1,3 +1,3 @@
 class ParkingHistorySerializer < ActiveModel::Serializer
-  attributes :id, :address, :date, :duration, :paid_price
+  attributes :id, :address, :date, :duration, :paidPrice
 end

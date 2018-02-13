@@ -1,12 +1,12 @@
 parkingHistories = ParkingHistory.create!([
-                                              {address: 'Savska 32', date: '24.12.2017.', duration: 1.5, paid_price: 50.0},
-                                              {address: 'Savska 33', date: '15.11.2017.', duration: 2.0, paid_price: 100.0},
-                                              {address: 'Savska 34', date: '17.10.2017.', duration: 2.5, paid_price: 150.0}
+                                              {address: 'Savska 32', date: '24.12.2017.', duration: 1.5, paidPrice: 50.0},
+                                              {address: 'Savska 33', date: '15.11.2017.', duration: 2.0, paidPrice: 100.0},
+                                              {address: 'Savska 34', date: '17.10.2017.', duration: 2.5, paidPrice: 150.0}
                                           ])
 
 users = User.create!([
-                         {first_name: 'Test', last_name: 'User', email: 'email@email.com', password: 'password'},
-                         {first_name: 'Test2', last_name: 'User2', email: 'email2@email.com', password: 'password2'},
+                         {firstName: 'Test', lastName: 'User', email: 'email@email.com', password: 'password'},
+                         {firstName: 'Test2', lastName: 'User2', email: 'email2@email.com', password: 'password2'},
                      ])
 
 parkingLocations = ParkingLocation.create!([

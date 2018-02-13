@@ -25,6 +25,6 @@ class ParkingHistoriesController < ApplicationController
   private
 
   def parking_history_params
-    params.require(:parking_history).permit(:address, :date, :duration, :paid_price)
+    params.require(:parking_history).permit(:address, :date, :duration, :paidPrice)
   end
 end
