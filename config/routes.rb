@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :parking_histories, only: [:index, :create, :show, :destroy]
+  resources :parking_histories, only: [:index, :create, :show]
   resources :users, only: [:index, :create, :show, :destroy]
-  resources :parking_locations, only: [:index, :create, :show, :destroy]
+  resources :parking_locations, only: [:index, :create, :show]
   root 'rails/info#routes'
 
   post '/auth/', to: 'authentications#show'

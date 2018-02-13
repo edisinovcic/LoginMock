@@ -8,9 +8,9 @@ class AuthenticationsController < ApplicationController
 
 
   def show
-    username = params[:username]
+    email = params[:email]
     password = params[:password]
-    authentication = User.find_by_username!(username)
+    authentication = User.find_by_email!(email)
     if authentication.nil?
       render json: {message: "User doesn't exist"}
       raise ActiveRecord::RecordNotFound
@@ -28,6 +28,6 @@ class AuthenticationsController < ApplicationController
   private
 
   def authentication_params
-    params.require(:authentication).permit(:username, :password)
+    params.require(:authentication).permit(:email, :password)
   end
 end
