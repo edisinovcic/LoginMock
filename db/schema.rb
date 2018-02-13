@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20180130102954) do
     t.string "last_name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "password", default: "", null: false
-    t.string "username", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
